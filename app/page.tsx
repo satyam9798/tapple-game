@@ -47,6 +47,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
       <h1 className="text-4xl font-bold mb-4">Tapple Game</h1>
+      <div className="mb-4 text-lg">
+       Developed by Satyam, exclusively for Pratishtha ❤️
+      </div>
 
       <div className="mb-4 text-xl">
         Category: <span className="text-yellow-400">{category.name}</span>
