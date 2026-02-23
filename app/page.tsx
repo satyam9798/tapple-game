@@ -67,7 +67,7 @@ export default function Home() {
         {timer}s
       </div>
 
-      <div className="grid grid-cols-7 gap-2 max-w-lg">
+      {/* <div className="grid grid-cols-7 gap-2 max-w-lg"> */}
         <div className="grid grid-cols-5 gap-3 max-w-md">
   {LETTERS.map((letter) => (
     <button
@@ -84,7 +84,7 @@ export default function Home() {
     </button>
   ))}
 </div>
-      </div>
+      {/* </div> */}
 
       <button
         onClick={resetGame}
