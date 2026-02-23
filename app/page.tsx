@@ -6,8 +6,12 @@ const categories = [
   { name: "Fruits", words: ["Apple", "Banana", "Mango", "Orange", "Grapes"] },
   { name: "Animals", words: ["Lion", "Tiger", "Elephant", "Zebra"] },
   { name: "Countries", words: ["India", "Brazil", "Canada", "France"] },
+  { name: "Pokemon", words: ["India", "Brazil", "Canada", "France"] },
 ];
-
+const LETTERS = [
+  "A","B","C","D","E","F","G","H","I","J",
+  "K","L","M","N","O","P","R","S","T","W"
+];
 export default function Home() {
   const [category, setCategory] = useState(categories[0]);
   const [usedLetters, setUsedLetters] = useState<string[]>([]);
@@ -64,20 +68,22 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-7 gap-2 max-w-lg">
-        {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
-          <button
-            key={letter}
-            onClick={() => handleLetterClick(letter)}
-            disabled={usedLetters.includes(letter)}
-            className={`p-3 rounded font-bold ${
-              usedLetters.includes(letter)
-                ? "bg-gray-700 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600"
-            }`}
-          >
-            {letter}
-          </button>
-        ))}
+        <div className="grid grid-cols-5 gap-3 max-w-md">
+  {LETTERS.map((letter) => (
+    <button
+      key={letter}
+      onClick={() => handleLetterClick(letter)}
+      disabled={usedLetters.includes(letter)}
+      className={`p-4 rounded-lg font-bold text-lg transition ${
+        usedLetters.includes(letter)
+          ? "bg-gray-700 cursor-not-allowed"
+          : "bg-blue-500 hover:bg-blue-600 active:scale-95"
+      }`}
+    >
+      {letter}
+    </button>
+  ))}
+</div>
       </div>
 
       <button
